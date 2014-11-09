@@ -5,7 +5,7 @@
     (no_connects 0)
     (area 0 0 0 0)
     (thickness 1.6)
-    (drawings 0)
+    (drawings 4)
     (tracks 0)
     (zones 0)
     (modules 0)
@@ -103,4 +103,30 @@
     (uvia_drill 0.127)
   )
 
+  (gr_line (start 98.8 87.8) (end 98.8 61.6) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 125 87.8) (end 98.8 87.8) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 125 61.6) (end 125 87.8) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 98.8 61.6) (end 125 61.6) (angle 90) (layer Dwgs.User) (width 0.2))
+
+  (zone (net 0) (net_name "") (layer F.Mask) (tstamp 545FA40D) (hatch edge 0.508)
+    (connect_pads (clearance 0.508))
+    (min_thickness 0.254)
+    (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
+    (polygon
+      (pts
+        (xy 97.8 60.6) (xy 126 60.6) (xy 126 88.8) (xy 97.8 88.8)
+      )
+    )
+    (polygon
+      (pts        (xy 99.8 62.6) (xy 124 62.6) (xy 124 86.8) (xy 99.8 86.8)
+      )
+    )
+    (filled_polygon
+      (pts
+        (xy 125.873 88.673) (xy 124.127 88.673) (xy 124.127 86.927) (xy 124.127 62.473) (xy 99.673 62.473)
+        (xy 99.673 86.927) (xy 124.127 86.927) (xy 124.127 88.673) (xy 124 88.673) (xy 97.927 88.673)
+        (xy 97.927 60.727) (xy 125.873 60.727) (xy 125.873 88.673)
+      )
+    )
+  )
 )
