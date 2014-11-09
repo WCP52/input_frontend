@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MASWSS0162
+D Switch, SPDT
+F mod_pdf/SW-SPDT-*
+$ENDCMP
+#
+#End Doc Library
