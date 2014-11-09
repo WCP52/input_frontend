@@ -43,7 +43,7 @@ LIBS:supertex
 LIBS:symbol
 LIBS:texas
 LIBS:vishay_semi
-LIBS:wcp52-detector-cache
+LIBS:wcp52-input-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
