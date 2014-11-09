@@ -1,11 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-11-08 BZR 5258)-product   date = Sun 09 Nov 2014 12:41:37 PM EST
-
-BeginCmp
-TimeStamp = /545F3E9C;
-Reference = C1;
-ValeurCmp = 47u;
-IdModule  = IPC7351-Nominal:CAPC3216X70;
-EndCmp
+Cmp-Mod V01 Created by Cvpcb (2014-11-08 BZR 5258)-product   date = Sun 09 Nov 2014 01:28:00 PM EST
 
 BeginCmp
 TimeStamp = /5456F1C3;
@@ -218,17 +211,10 @@ IdModule  = IPC7351-Nominal:RESC1005X40;
 EndCmp
 
 BeginCmp
-TimeStamp = /54566388;
+TimeStamp = /545FFD0F;
 Reference = J1;
 ValeurCmp = 5V;
-IdModule  = conn:CONN_2-SIL;
-EndCmp
-
-BeginCmp
-TimeStamp = /5456E715;
-Reference = J2;
-ValeurCmp = -5V;
-IdModule  = conn:CONN_2-SIL;
+IdModule  = conn:CONN_3-SIL;
 EndCmp
 
 BeginCmp
