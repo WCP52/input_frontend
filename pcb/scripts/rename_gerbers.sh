@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/zsh
+
+setopt extended_glob
 
 # Target must be a target directory or .
 TARGET=gerbers
@@ -9,57 +11,51 @@ PROJNAME=wcp52-input
 
 MANUF=OSHPARK
 
-if [ "$MANUF" = "OSHPARK" ]; then
-    EXT_TOPCOPR="GTL"
-    EXT_TOPMASK="GTS"
-    EXT_TOPSILK="GTO"
+# Manufacturers' file extensions
+exts_oshpark=(
+    '*F_Cu.*'       .GTL
+    '*F_Mask.*'     .GTS
+    '*F_SilkS.*'    .GTO
+    '*In1_Cu.*'     .G2L
+    '*In2_Cu.*'     .G3L
+    '*B_Cu.*'       .GBL
+    '*B_Mask.*'     .GBS
+    '*B_SilkS.*'    .GBO
+    '*Edge_Cuts.*'  .GKO
+    '*Eco1_User.*'  .GKO
+    '*.drl'         .XLN
+    '*-NPTH.drl'    -NPTH.XLN )
 
-    EXT_L2COPR="G2L"
-    EXT_L3COPR="G3L"
+exts_itead_seeed=(
+    '*F_Cu.*'       .GTL
+    '*F_Mask.*'     .GTS
+    '*F_SilkS.*'    .GTO
+    '*In1_Cu.*'     .GL2
+    '*In2_Cu.*'     .GL3
+    '*B_Cu.*'       .GBL
+    '*B_Mask.*'     .GBS
+    '*B_SilkS.*'    .GBO
+    '*Edge_Cuts.*'  .GML
+    '*Eco1_User.*'  .GML
+    '*.drl'         .TXT
+    '*-NPTH.drl'    -NPTH.TXT )
 
-    EXT_BOTCOPR="GBL"
-    EXT_BOTMASK="GBS"
-    EXT_BOTSILK="GBO"
-
-    EXT_MECH="GKO"
-    EXT_DRILL="XLN"
-
-elif [ "$MANUF" = "ITEAD" ] || [ "$MANUF" = "SEEED" ]; then
-    EXT_TOPCOPR="GTL"
-    EXT_TOPMASK="GTS"
-    EXT_TOPSILK="GTO"
-
-    EXT_L2COPR="GL2"
-    EXT_L3COPR="GL3"
-
-    EXT_BOTCOPR="GBL"
-    EXT_BOTMASK="GBS"
-    EXT_BOTSILK="GBO"
-
-    EXT_MECH="GML"
-    EXT_DRILL="TXT"
-
-fi
+case "$MANUF" in
+    OSHPARK)
+        exts=($exts_oshpark)
+        ;;
+    ITEAD)
+        exts=($exts_itead_seeed)
+        ;;
+    SEEED)
+        exts=($exts_itead_seeed)
+        ;;
+esac
 
 mkdir -p "${TARGET}"
+for pat ext in $exts; do
+    file=( $~pat(N) )
+    if [ -z $file ]; then continue; fi
+    mv -vf $file ${TARGET}/${PROJNAME}$ext
+done
 
-mv -f "${PROJNAME}-F_Cu.gtl" "${TARGET}/${PROJNAME}.${EXT_TOPCOPR}"
-mv -f "${PROJNAME}-F_Mask.gts" "${TARGET}/${PROJNAME}.${EXT_TOPMASK}"
-mv -f "${PROJNAME}-F_SilkS.gto" "${TARGET}/${PROJNAME}.${EXT_TOPSILK}"
-
-mv -f "${PROJNAME}-In1_Cu.gbr" "${TARGET}/${PROJNAME}.${EXT_L2COPR}"
-mv -f "${PROJNAME}-In2_Cu.gbr" "${TARGET}/${PROJNAME}.${EXT_L3COPR}"
-
-mv -f "${PROJNAME}-B_Cu.gbl" "${TARGET}/${PROJNAME}.${EXT_BOTCOPR}"
-mv -f "${PROJNAME}-B_Mask.gbs" "${TARGET}/${PROJNAME}.${EXT_BOTMASK}"
-mv -f "${PROJNAME}-B_SilkS.gbo" "${TARGET}/${PROJNAME}.${EXT_BOTSILK}"
-
-mv -f "${PROJNAME}.drl" "${TARGET}/${PROJNAME}.${EXT_DRILL}"
-mv -f "${PROJNAME}-NPTH.drl" "${TARGET}/${PROJNAME}-NPTH.${EXT_DRILL}"
-
-
-if [ -f "${PROJNAME}-Edge_Cuts.gbr" ]; then
-    mv -f "${PROJNAME}-Edge_Cuts.gbr" "${TARGET}/${PROJNAME}.${EXT_MECH}"
-elif [ -f "${PROJNAME}-Eco1_User.gbr" ] ; then
-    mv -f "${PROJNAME}-Eco1_User.gbr" "${TARGET}/${PROJNAME}.${EXT_MECH}"
-fi

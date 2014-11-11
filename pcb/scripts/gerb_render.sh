@@ -1,6 +1,8 @@
+#!/usr/bin/zsh
+
 function render {
     echo "Rendering $1..."
-    gerbv -x png -p "gvp/$2.gvp" -D600 -a
+    gerbv -x png -p "gvp/$2.gvp" -D600 -a >/dev/null
     optipng output.png -quiet
     mv output.png "renders/$2.png"
     convert "renders/$2.png" -scale '33%' "renders/$2_small.png"
