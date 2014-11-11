@@ -1,19 +1,21 @@
 #!/usr/bin/zsh
 
+PROJECT=wcp52-input
+
 setopt extended_glob
 
-./scripts/rename_gerbers.sh
+./scripts/rename_gerbers.sh $PROJECT
 
-./scripts/gerb_render.sh
+./scripts/gerb_render.sh $PROJECT
 
 pushd renders
     for i in *.ps; do
         ps2pdf -sPAPERSIZE=letter "$i" "${i%.ps}.pdf"
     done
 
-    pdfunite wcp52-input.pdf *.pdf~wcp52-input.pdf~schematic.pdf schematic.pdf
+    pdfunite $PROJECT.pdf *.pdf~$PROJECT.pdf~schematic.pdf(N) schematic.pdf
 
-    convert -alpha Off +antialias -density 40 wcp52-input.pdf schematic_small.png
+    convert -alpha Off +antialias -density 40 $PROJECT.pdf schematic_small.png
     rm *.pdf~schematic.pdf
 popd
 
