@@ -1,4 +1,4 @@
-update=Tue 11 Nov 2014 09:30:32 AM EST
+update=11/12/2014 12:29:38 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -78,7 +78,7 @@ LibName44=vishay_semi
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=renders
+PlotDirectoryName=renders/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
