@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-11-08 BZR 5258)-product   date = Tue 11 Nov 2014 02:25:47 PM EST
+Cmp-Mod V01 Created by Cvpcb (2014-11-13 BZR 5275)-product   date = Thu 13 Nov 2014 07:17:49 PM EST
 
 BeginCmp
 TimeStamp = /5462650C;
@@ -333,14 +333,14 @@ BeginCmp
 TimeStamp = /5456AEDE;
 Reference = J3;
 ValeurCmp = IN1;
-IdModule  = conn:CONN-2_CONSMA001-SMD-G;
+IdModule  = conn:CONN-2_CONSMA001;
 EndCmp
 
 BeginCmp
 TimeStamp = /5456555C;
 Reference = J4;
 ValeurCmp = IN2;
-IdModule  = conn:CONN-2_CONSMA001-SMD-G;
+IdModule  = conn:CONN-2_CONSMA001;
 EndCmp
 
 BeginCmp
@@ -354,7 +354,7 @@ BeginCmp
 TimeStamp = /545F195E;
 Reference = J6;
 ValeurCmp = PHASEREF;
-IdModule  = conn:CONN-2_CONSMA001-SMD-G;
+IdModule  = conn:CONN-2_CONSMA001;
 EndCmp
 
 BeginCmp
@@ -367,14 +367,14 @@ EndCmp
 BeginCmp
 TimeStamp = /545EAADF/545EC26F;
 Reference = L1;
-ValeurCmp = 27n 2%;
+ValeurCmp = 39n 2%;
 IdModule  = IPC7351-Nominal:INDC1005X60;
 EndCmp
 
 BeginCmp
 TimeStamp = /545EAADF/545EC740;
 Reference = L2;
-ValeurCmp = 27n 2%;
+ValeurCmp = 39n 2%;
 IdModule  = IPC7351-Nominal:INDC1005X60;
 EndCmp
 
