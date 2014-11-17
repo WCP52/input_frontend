@@ -1,48 +1,12 @@
 EESchema Schematic File Version 2
-LIBS:1N
-LIBS:1N-SMD
-LIBS:2N
-LIBS:2N-SMD
-LIBS:4000
-LIBS:7400
-LIBS:ad
-LIBS:altera
 LIBS:atmel
-LIBS:capacitors
 LIBS:conn
-LIBS:diodesinc
 LIBS:display
-LIBS:electromech
-LIBS:fairchild_ic
-LIBS:fairchild_semi
 LIBS:ftdi
-LIBS:ic_template
-LIBS:inductors
-LIBS:infineon
-LIBS:intersil
-LIBS:irf
-LIBS:ixys
-LIBS:lattice
-LIBS:ltc
-LIBS:maxim
-LIBS:mechanical
 LIBS:microchip
-LIBS:nxp_ic
-LIBS:nxp_semi
-LIBS:onsemi
-LIBS:passive
 LIBS:power
-LIBS:resistors
-LIBS:russian-nixies
-LIBS:semi
-LIBS:silabs
-LIBS:skyworks
-LIBS:st_ic
-LIBS:st_semi
 LIBS:supertex
-LIBS:symbol
 LIBS:texas
-LIBS:vishay_semi
 LIBS:wcp52-input-cache
 EELAYER 25 0
 EELAYER END
@@ -74,7 +38,7 @@ L PMV160UP Q1
 U 1 1 54566538
 P 1350 2050
 F 0 "Q1" V 1600 2050 50  0000 C CNN
-F 1 "PMV160UP" V 1500 2050 50  0000 C CNN
+F 1 "IRLML6402" V 1500 2050 50  0000 C CNN
 F 2 "IPC-semi-nominal:SOT-23" H 1350 2050 60  0001 C CNN
 F 3 "" H 1350 2050 60  0000 C CNN
 	1    1350 2050
@@ -278,7 +242,7 @@ L 2N7002 Q2
 U 1 1 5457011E
 P 1350 2700
 F 0 "Q2" V 1600 2700 50  0000 C CNN
-F 1 "2N7002" V 1500 2700 50  0000 C CNN
+F 1 "IRLML2402" V 1500 2700 50  0000 C CNN
 F 2 "IPC-semi-nominal:SOT-23" H 1350 2700 60  0001 C CNN
 F 3 "" H 1350 2700 60  0000 C CNN
 	1    1350 2700
