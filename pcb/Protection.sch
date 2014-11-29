@@ -1,12 +1,48 @@
 EESchema Schematic File Version 2
+LIBS:1N
+LIBS:1N-SMD
+LIBS:2N
+LIBS:2N-SMD
+LIBS:4000
+LIBS:7400
+LIBS:ad
+LIBS:altera
 LIBS:atmel
+LIBS:capacitors
 LIBS:conn
+LIBS:diodesinc
 LIBS:display
+LIBS:electromech
+LIBS:fairchild_ic
+LIBS:fairchild_semi
 LIBS:ftdi
+LIBS:ic_template
+LIBS:inductors
+LIBS:infineon
+LIBS:intersil
+LIBS:irf
+LIBS:ixys
+LIBS:lattice
+LIBS:ltc
+LIBS:maxim
+LIBS:mechanical
 LIBS:microchip
+LIBS:nxp_ic
+LIBS:nxp_semi
+LIBS:onsemi
+LIBS:passive
 LIBS:power
+LIBS:resistors
+LIBS:russian-nixies
+LIBS:semi
+LIBS:silabs
+LIBS:skyworks
+LIBS:st_ic
+LIBS:st_semi
 LIBS:supertex
+LIBS:symbol
 LIBS:texas
+LIBS:vishay_semi
 LIBS:wcp52-input-cache
 EELAYER 25 0
 EELAYER END
@@ -14,7 +50,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 2 5
 Title "Input Protection"
-Date "Sun 09 Nov 2014"
+Date "2014-11-09"
 Rev "A"
 Comp "WCP52"
 Comment1 "Gain/Phase Analyzer"
